@@ -1,0 +1,46 @@
+{
+  "manifest_version": 2,
+
+  "name": "Idena plus",
+  "version": "0.1.3",
+  "description": "Increase Idena explorer capability",
+
+  "icons": { "16": "icon.png",
+           "48": "icon.png",
+          "128": "icon.png" },
+
+  "web_accessible_resources": [
+  "idena-logo-dark.svg","images/moon.svg","images/sun.svg","css/styles.css", "css/dark-mode.css"
+],
+
+  "permissions": [
+      "activeTab"
+    ],
+
+  "content_scripts": [
+  {
+    "css": ["css/styles.css","css/dark-mode.css"],
+    "js": ["js/preload.js"],
+    "matches": ["https://scan.idena.io/*"],
+    "run_at": "document_start"
+  },
+  {
+    "js": ["js/global.js"],
+    "matches": ["https://scan.idena.io/*"],
+    "run_at": "document_end"
+  },
+  {
+    "js": ["js/content-home.js"],
+    "matches": ["https://scan.idena.io/"]
+  },
+  {
+    "js": ["js/identity-home.js"],
+    "matches": ["https://scan.idena.io/identity*"]
+  },
+  {
+    "js": ["js/address-home.js"],
+    "matches": ["https://scan.idena.io/address*"]
+  }
+]
+
+}
