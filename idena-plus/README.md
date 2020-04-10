@@ -1,5 +1,8 @@
-# a Chrome extension to add Idena dark explorer dark mode and add
+# Idena Plus - A Chrome Extension
+Unofficial community built chrome extension which enhances and adds extra information to the official Idena Scan / Idena Explorer
 
-price data
-epoch until 
-
+### What's new?
+v0.1.3
+```
+- Now you can toggle between Light and dark modes!
+```
