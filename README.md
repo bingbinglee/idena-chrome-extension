@@ -3,4 +3,6 @@ Unofficial community built chrome extension which enhances and adds extra inform
 
 ### What's new?
 v0.1.3
-```- Now you can toggle between Light and dark modes!```
+```
+- Now you can toggle between Light and dark modes!
+```
