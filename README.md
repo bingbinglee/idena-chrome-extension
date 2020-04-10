@@ -8,11 +8,11 @@ v0.1.3
 ```
 ### What's on the roadmap?
 ```
-- [ ] Show Identity breakdown in % on epoch page
-- [ ] Show identity % increase from last epoch on epoch page
-- [ ] Show identity % increase from last epoch on home page
-- [ ] Address copy function on address page
-- [ ] Address QR function on address page
-- [ ] Back button on transaction page
+- Show Identity breakdown in % on epoch page
+- Show identity % increase from last epoch on epoch page
+- Show identity % increase from last epoch on home page
+- Address copy function on address page
+- Address QR function on address page
+- Back button on transaction page
 
 ```
