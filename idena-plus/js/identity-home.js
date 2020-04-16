@@ -1,7 +1,22 @@
 var parent2 = document.querySelector(".justify-content-between");
 var modechange = parent2.querySelector(".col-auto:last-child");
 
+
+var parent4 = document.querySelector(".main .container:last-child");
+var topheader = parent4.querySelector(".section:first-child .row .col");
+//console.log(topheader);
+
 var status = '';
+
+topheader.innerHTML += '<a href="#" onclick="var range \= document.createRange();'
+                    +'range.selectNode(document.getElementById(\'IdentityAddress\'));'
+                    +'window.getSelection().removeAllRanges();' // clear current selection
+                    +'window.getSelection().addRange(range);' // to select text
+                    +'document.execCommand(\'copy\');'
+                    +'document.getElementById(\'copycat\').innerHTML \= \'Copied!\';'
+                    +'window.getSelection().removeAllRanges();" class="btn btn-secondary btn-small">'
+          +'<span id="copycat">Copy Address</span>'
+        +'</a>';
 
 
 function getUrlVars() {

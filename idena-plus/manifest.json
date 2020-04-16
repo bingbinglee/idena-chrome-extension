@@ -40,6 +40,10 @@
   {
     "js": ["js/address-home.js"],
     "matches": ["https://scan.idena.io/address*"]
+  },
+  {
+    "js": ["js/transact.js"],
+    "matches": ["https://scan.idena.io/tx*","https://scan.idena.io/block*"]
   }
 ]
 

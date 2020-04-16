@@ -1,5 +1,8 @@
 var parent2 = document.querySelector(".main .container:last-child");
 var modechange = parent2.querySelector(".section_info");
+
+var topheader = parent2.querySelector(".section:first-child");
+
 var address = document.querySelector(".section_main__subtitle");
 //console.log(modechange);
 
@@ -8,6 +11,28 @@ var stake = '';
 var total = '';
 var curprice = '';
 var txCount = '';
+
+
+function copyFunction() {
+  var copyText = document.getElementById("Address");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+}
+
+
+topheader.innerHTML += '<div class="button-group">'
+        +'<a href="#" onclick="var range \= document.createRange();'
+                    +'range.selectNode(document.getElementById(\'Address\'));'
+                    +'window.getSelection().removeAllRanges();' // clear current selection
+                    +'window.getSelection().addRange(range);' // to select text
+                    +'document.execCommand(\'copy\');'
+                    +'document.getElementById(\'copycat\').innerHTML \= \'Copied!\';'
+                    +'window.getSelection().removeAllRanges();" class="btn btn-secondary btn-small">'
+         +'<i class="icon icon--coins"></i>'
+          +'<span id="copycat">Copy Address</span>'
+        +'</a>'
+        +'</div>';
 
 
 function details_switch(x1,y1,z1,n1) {
@@ -150,7 +175,7 @@ window.onload = (function(){
     
 
     curprice = rounder(data2['market_data']['current_price']['usd']);
-    console.log(curprice+balance+stake);
+    //console.log(curprice+balance+stake);
     
     total = precise2(curprice*(rounder(balance)+rounder(stake)));
 
