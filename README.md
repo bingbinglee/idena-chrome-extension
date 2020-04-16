@@ -2,9 +2,12 @@
 Unofficial community built chrome extension which enhances and adds extra information to the official Idena Scan / Idena Explorer
 
 ### What's new?
-v0.1.3
+v0.1.4
 ```
-- Now you can toggle between Light and dark modes!
+- Back button on transaction page
+- Back button on block page
+- Address copy function on address pages & identity pages
+
 ```
 ### What's on the roadmap?
 ```
