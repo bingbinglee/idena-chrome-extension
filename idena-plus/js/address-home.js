@@ -1,9 +1,7 @@
 var parent2 = document.querySelector(".main .container:last-child");
 var modechange = parent2.querySelector(".section_info");
 
-var topheader = parent2.querySelector(".section:first-child");
-
-var address = document.querySelector(".section_main__subtitle");
+var address = document.getElementById("Address");
 //console.log(modechange);
 
 var balance = '';
@@ -19,20 +17,6 @@ function copyFunction() {
   copyText.setSelectionRange(0, 99999);
   document.execCommand("copy");
 }
-
-
-topheader.innerHTML += '<div class="button-group">'
-        +'<a href="#" onclick="var range \= document.createRange();'
-                    +'range.selectNode(document.getElementById(\'Address\'));'
-                    +'window.getSelection().removeAllRanges();' // clear current selection
-                    +'window.getSelection().addRange(range);' // to select text
-                    +'document.execCommand(\'copy\');'
-                    +'document.getElementById(\'copycat\').innerHTML \= \'Copied!\';'
-                    +'window.getSelection().removeAllRanges();" class="btn btn-secondary btn-small">'
-         +'<i class="icon icon--coins"></i>'
-          +'<span id="copycat">Copy Address</span>'
-        +'</a>'
-        +'</div>';
 
 
 function details_switch(x1,y1,z1,n1) {
@@ -135,30 +119,41 @@ function round2(x) {
 function exchange_id()
 {
 if(getUrlVars()["address"]=='0x83B8A2F9Bd1bE7f1fB496ec91eB0C6983cD38725'){
- address.innerHTML = '<span id="Address">'
-                        +getUrlVars()["address"]
-                        +'</span>'
-                        +'<span class="badge badge-secondary">Qtrade.io exchange</span>';
+    
+ address.innerHTML = getUrlVars()["address"]+'<span class="badge badge-secondary">Qtrade.io exchange</span>';
+
 } else if(getUrlVars()["address"]=='0x1f96445BE4D941934277CCe0C02D9EA8c9cc02f5'){
- address.innerHTML = '<span id="Address">'
-                        +getUrlVars()["address"]
-                        +'</span>'
-                        +'<span class="badge badge-secondary">qbtc exchange</span>';
+address.innerHTML = getUrlVars()["address"]+'<span class="badge badge-secondary">Qbtc exchange</span>';
+
 } else if(getUrlVars()["address"]=='0xcbb98843270812eeCE07BFb82d26b4881a33aA91'){
-address.innerHTML = '<span id="Address">'
-                        +getUrlVars()["address"]
-                        +'</span>'
-                        +'<span class="badge badge-secondary">Foundation wallet</span>';
+address.innerHTML = getUrlVars()["address"]+'<span class="badge badge-secondary">Foundation wallet</span>';
+
 } else if(getUrlVars()["address"]=='0x0000000000000000000000000000000000000000'){
-address.innerHTML = '<span id="Address">'
-                        +getUrlVars()["address"]
-                        +'</span>'
-                        +'<span class="badge badge-secondary">Zero wallet</span>';
+address.innerHTML = getUrlVars()["address"]+'<span class="badge badge-secondary">Zero Wallet</span>';
+
+} else if(getUrlVars()["address"]=='0x0a8B4b113d863c86f64E49a1270F7a4A9B65dAAc'){
+address.innerHTML = getUrlVars()["address"]+'<span class="badge badge-secondary">2020 Funding wallet</span>';
+
+} else if(getUrlVars()["address"]=='0x477E32166cd16C1b4909BE783347e705Aef3d5db'){
+address.innerHTML = getUrlVars()["address"]+'<span class="badge badge-secondary">2021-2022 FUnding Wallet</span>';
+
 } else {
-    address.innerHTML = '<span id="Address">'
-                        +getUrlVars()["address"]
-                        +'</span>';
+    address.innerHTML = getUrlVars()["address"];
+
 }
+var topheader = parent2.querySelector(".section:first-child");
+topheader.innerHTML += '<div class="button-group">'
+        +'<a href="#" onclick="var range \= document.createRange();'
+                    +'range.selectNode(document.getElementById(\'Address\'));'
+                    +'window.getSelection().removeAllRanges();' // clear current selection
+                    +'window.getSelection().addRange(range);' // to select text
+                    +'document.execCommand(\'copy\');'
+                    +'document.getElementById(\'copycat\').innerHTML \= \'Copied!\';'
+                    +'window.getSelection().removeAllRanges();" class="btn btn-secondary btn-small">'
+         +'<i class="icon icon--coins"></i>'
+          +'<span id="copycat">Copy Address</span>'
+        +'</a>'
+        +'</div>';
 }
 
 
@@ -166,7 +161,7 @@ window.onload = (function(){
 
   ajax_get('https://api.idena.io/api/Address/'+getUrlVars()["address"], function(data) {
     //console.log(data);
-    exchange_id();
+    
     balance = precise2(data['result']['balance']);
     stake = precise3(data['result']['stake']);
     txCount = precise2(data['result']['txCount']);
@@ -181,7 +176,7 @@ window.onload = (function(){
 
     details_switch(round3(balance),round3(stake),round3(total),round3(txCount));
     
-    
+    exchange_id();
     //balance = precise3(balance);
     //stake = precise3(stake);
 
