@@ -242,6 +242,27 @@ h1, .h1 {
     font-weight: bold;
 }
 
+
+.qr {
+	display: block;
+    float: right;
+    background: #fff;
+    height: 130px;
+    width: 130px;
+    padding: 0.5em;
+    z-index: -1;
+    margin-top: -7.5em;
+    margin-right: 1em;
+    border-radius: 8px;
+    position: relative;
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.2);
+    box-shadow: 0 1px 3px rgba(0,0,0,.2);
+}
+
+.qr img {
+	width: 100%;
+}
+
 /** table **/
 
 .table tr:hover {

@@ -2,11 +2,11 @@
 Unofficial community built chrome extension which enhances and adds extra information to the official Idena Scan / Idena Explorer
 
 ### What's new?
-v0.1.4
+v0.1.5
 ```
-- Back button on transaction page
-- Back button on block page
-- Address copy function on address pages & identity pages
+- QR codes added to all address pages!
+- Epoch identity % increase since previous and first epoch on epoch pages
+- Epoch identity % increase since previous epoch on home page
 ```
 
 ### Who maintains Idena Plus Extension? 

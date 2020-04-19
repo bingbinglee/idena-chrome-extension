@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "Idena plus",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Increase Idena explorer capability",
 
   "icons": { "16": "icon.png",
@@ -44,6 +44,10 @@
   {
     "js": ["js/transact.js"],
     "matches": ["https://scan.idena.io/tx*","https://scan.idena.io/block*"]
+  },
+  {
+    "js": ["js/epoch-home.js"],
+    "matches": ["https://scan.idena.io/tx*","https://scan.idena.io/epoch*"]
   }
 ]
 

@@ -154,6 +154,11 @@ topheader.innerHTML += '<div class="button-group">'
           +'<span id="copycat">Copy Address</span>'
         +'</a>'
         +'</div>';
+
+
+var qr = '<div class="qr"><img src="https://chart.apis.google.com/chart?cht=qr&amp;chs=150x150&amp;chl='+getUrlVars()["address"]+'&amp;chld=H|0"></div>';
+
+topheader.innerHTML += qr;
 }
 
 

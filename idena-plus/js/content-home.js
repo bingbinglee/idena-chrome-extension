@@ -3,6 +3,14 @@ var percentage = '--';
 var percentage7 = '--';
 var percentage30 = '--';
 var totalvol = '--';
+var growth_last = '';
+var current = '';
+var genesis = 60;
+var previous = '';
+var epoch = '';
+var epoch1 = '';
+var growth_last = '--';
+
 var countDownDate = new Date("").getTime();
 var validTime = '--';
 
@@ -59,10 +67,23 @@ function pricemagic(){
               +'</div>'
               +'</div></div>';
 
+  var growthwidget = '<div class="col-3 col-sm-3">'
+            +'<h1>Network Growth</h1>'
+            +'<div class="card">'
+            +'<div class="info_block">'
+             +'<div class="row">'
+              +'<div class="col-12 col-sm-12 bordered-col">'
+                    +'<div class="col-auto"><h3 class="info_block__accent" id="NetworkGrowth"> '+growth_last+'</h3></div>'
+                    +'<div class="control-label" data-toggle="tooltip" title="Network growth since last epoch" data-original-title="Network growth since last epoch">Growth since last epoch</div>'
+              +'</div>'
+              +'</div>'
+              +'</div>'
+              +'</div></div>';
+
   var timewidget = '<section class="section section_info">' 
             +'<div class="row">'
             +currentpricewidget
-            +'<div class="col-9 col-sm-9">'
+            +'<div class="col-9 col-sm-6">'
             +'<h1>Next Validation In</h1>'
             +'<div class="card">'
             +'<div class="info_block">'
@@ -94,6 +115,8 @@ function pricemagic(){
               +'</div>'
               +'</div>'              
               +'</div>'
+
+              +growthwidget
               
             +'</div>'
           +'</section>';
@@ -201,10 +224,28 @@ window.onload = (function(){
     pricemagic();
 
       ajax_get('https://api.idena.io/api/epoch/last', function(data) {
+      epoch = data['result']['epoch']-2;
+      epoch1 = data['result']['epoch'];
       countDownDate = new Date(data['result']['validationTime']).getTime();
       var d = new Date(data['result']['validationTime']);
       validTime = d.toLocaleDateString() + ' ' + d.toLocaleTimeString();
       timemagic();
+
+        ajax_get('https://api.idena.org/api/Epoch/'+epoch1+'/Identities/Count?states[]=Newbie,Verified,Human', function(data) {
+
+          current = data["result"];
+
+          ajax_get('https://api.idena.org/api/Epoch/'+epoch+'/Identities/Count?states[]=Newbie,Verified,Human', function(data) {  
+
+            previous = data["result"];
+            growth_last = color(precise2((current-previous)/previous*100));
+
+            document.getElementById("NetworkGrowth").innerHTML = growth_last;
+
+          });
+
+        });
+
       });
 
   });
