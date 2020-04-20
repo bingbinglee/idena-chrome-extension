@@ -21,33 +21,33 @@
   {
     "css": ["css/styles.css","css/dark-mode.css"],
     "js": ["js/preload.js"],
-    "matches": ["https://scan.idena.io/*"],
+    "matches": ["https://scan.idena.io/*","https://scan.idena.org/*"],
     "run_at": "document_start"
   },
   {
     "js": ["js/global.js"],
-    "matches": ["https://scan.idena.io/*"],
+    "matches": ["https://scan.idena.io/*","https://scan.idena.org/*"],
     "run_at": "document_end"
   },
   {
     "js": ["js/content-home.js"],
-    "matches": ["https://scan.idena.io/"]
+    "matches": ["https://scan.idena.io/","https://scan.idena.org/"]
   },
   {
     "js": ["js/identity-home.js"],
-    "matches": ["https://scan.idena.io/identity*"]
+    "matches": ["https://scan.idena.io/identity*","https://scan.idena.org/identity*"]
   },
   {
     "js": ["js/address-home.js"],
-    "matches": ["https://scan.idena.io/address*"]
+    "matches": ["https://scan.idena.io/address*","https://scan.idena.org/address*"]
   },
   {
     "js": ["js/transact.js"],
-    "matches": ["https://scan.idena.io/tx*","https://scan.idena.io/block*"]
+    "matches": ["https://scan.idena.io/tx*","https://scan.idena.io/block*","https://scan.idena.org/block*","https://scan.idena.org/tx*"]
   },
   {
     "js": ["js/epoch-home.js"],
-    "matches": ["https://scan.idena.io/tx*","https://scan.idena.io/epoch*"]
+    "matches": ["https://scan.idena.io/tx*","https://scan.idena.io/epoch*","https://scan.idena.org/epoch*"]
   }
 ]
 
