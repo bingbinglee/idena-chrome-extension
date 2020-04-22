@@ -134,8 +134,20 @@ address.innerHTML = getUrlVars()["address"]+'<span class="badge badge-secondary"
 } else if(getUrlVars()["address"]=='0x0a8B4b113d863c86f64E49a1270F7a4A9B65dAAc'){
 address.innerHTML = getUrlVars()["address"]+'<span class="badge badge-secondary">2020 Funding wallet</span>';
 
+} else if(getUrlVars()["address"]=='0x9bf19e7d58B2A95aaBD0cB8bd0Bc7da1c72E696b'){
+address.innerHTML = getUrlVars()["address"]+'<span class="badge badge-secondary">Investor wallet 1</span>';
+
+} else if(getUrlVars()["address"]=='0x5b8896aEd1d98604c00bAcF1643F752949Fe807D'){
+address.innerHTML = getUrlVars()["address"]+'<span class="badge badge-secondary">Investor wallet 2</span>';
+
+} else if(getUrlVars()["address"]=='0xc94D32638D71aBA05F0bDADE498948eF93944428'){
+address.innerHTML = getUrlVars()["address"]+'<span class="badge badge-secondary">Ambassador fund</span>';
+
+} else if(getUrlVars()["address"]=='0xCe12D460d2dd8786f409Ae7E5AE43dB8d9C6Dc29'){
+address.innerHTML = getUrlVars()["address"]+'<span class="badge badge-secondary">Team funds distribution wallet</span>';
+
 } else if(getUrlVars()["address"]=='0x477E32166cd16C1b4909BE783347e705Aef3d5db'){
-address.innerHTML = getUrlVars()["address"]+'<span class="badge badge-secondary">2021-2022 FUnding Wallet</span>';
+address.innerHTML = getUrlVars()["address"]+'<span class="badge badge-secondary">2021-2022 Funding Wallet</span>';
 
 } else {
     address.innerHTML = getUrlVars()["address"];
