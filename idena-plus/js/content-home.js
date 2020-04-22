@@ -8,6 +8,7 @@ var current = '';
 var genesis = 60;
 var previous = '';
 var epoch = '';
+var epochlink = '';
 var epoch1 = '';
 var growth_last = '--';
 
@@ -16,6 +17,8 @@ var validTime = '--';
 
 
 var parent3 = document.querySelector(".main .container:last-child");
+var hotlinks = document.getElementsByTagName("section")[1].innerHTML;
+
 var coinchange = parent3.querySelector(".section:first-child");
 var minechange = parent3.querySelector(".section:last-child");
 
@@ -54,6 +57,25 @@ function ajax_get(url, callback) {
 
 
 function pricemagic(){
+
+  /* var hotlinks = '<section class="section">'
+      +'<div class="button-group">'
+        +'<a type="button" class="btn btn-small btn-secondary" href="./circulation">'
+          +'<i class="icon icon--coins"></i>'
+          +'<span>Circulating supply</span>'
+        +'</a>'
+        +'<a class="btn btn-secondary btn-small" id="ValidationResult" href="./validation?epoch=42">'
+          +'<i class="icon icon--report"></i>'
+          +'<span>Validation results</span>'
+        +'</a>'
+        +'<a class="btn btn-secondary btn-small" href="https://idena.today">'
+          +'<i class="icon icon--timer"></i>'
+          +'<span>More stats</span>'
+        +'</a>'
+      +'</div>'
+      +'</section>'; */
+
+
   var currentpricewidget = '<div class="col-3 col-sm-3">'
             +'<h1>Current Price</h1>'
             +'<div class="card">'
@@ -153,7 +175,7 @@ function pricemagic(){
      +'</section>';
 
 
-parent3.innerHTML = '<section class="section section_info">'+coinchange.innerHTML+'</section>' + timewidget + pricewidget + '<section class="section section_info">'+minechange.innerHTML +'</section>';
+parent3.innerHTML = '<section class="section section_info">'+coinchange.innerHTML+'</section>' + '<section class="section ">'+ hotlinks +'</section>'+ timewidget + pricewidget + '<section class="section section_info">'+minechange.innerHTML +'</section>';
 
 }
 
@@ -224,6 +246,7 @@ window.onload = (function(){
     pricemagic();
 
       ajax_get('https://api.idena.io/api/epoch/last', function(data) {
+      epochlink = data['result']['epoch'];
       epoch = data['result']['epoch']-2;
       epoch1 = data['result']['epoch'];
       countDownDate = new Date(data['result']['validationTime']).getTime();
@@ -241,6 +264,7 @@ window.onload = (function(){
             growth_last = color(precise2((current-previous)/previous*100));
 
             document.getElementById("NetworkGrowth").innerHTML = growth_last;
+            document.getElementById("ValidationResult").href = "./validation?epoch="+epochlink;
 
           });
 
