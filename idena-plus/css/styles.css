@@ -75,6 +75,12 @@ body {
     transition: all .15s ease;
 }
 
+.header .form_search {
+    font-size: 0;
+    margin-left: 15% !important;
+    margin-right: 15% !important;
+}
+
 .header-shadow {
     -webkit-box-shadow: 0 2px 15px rgba(0,0,0,.2);
     box-shadow: 0 2px 15px rgba(0,0,0,.2);
