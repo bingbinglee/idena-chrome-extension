@@ -53,9 +53,9 @@ function ajax_get(url, callback) {
 
 function color(x) {
   if(x<0) {
-     return '<span class="red" style="margin-left: 7px;">'+x+' %</span>';
+     return '<span class="red" style="margin-left: 7px;">'+x+'% &#x2193;</span>';
   } else {
-    return '<span class="green" style="margin-left: 7px;">+'+x+' %</span>';
+    return '<span class="green" style="margin-left: 7px;">+'+x+'% &#x2191;</span>';
   }
 }
 

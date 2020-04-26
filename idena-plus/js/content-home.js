@@ -182,9 +182,9 @@ parent3.innerHTML = '<section class="section section_info">'+coinchange.innerHTM
 
 function color(x) {
   if(x<0) {
-     return '<span class="red">'+x+' %</span>';
+     return '<span class="red">'+x+'% &#x2193;</span>';
   } else {
-    return '<span class="green">+'+x+' %</span>';
+    return '<span class="green">+'+x+'% &#x2191;</span>';
   }
 }
 
