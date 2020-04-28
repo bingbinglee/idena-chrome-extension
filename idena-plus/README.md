@@ -2,11 +2,12 @@
 Unofficial community built chrome extension which enhances and adds extra information to the official Idena Scan / Idena Explorer
 
 ### What's new?
-v0.1.5
+v0.1.7
 ```
-- QR codes added to all address pages!
-- Epoch identity % increase since previous and first epoch on epoch pages
-- Epoch identity % increase since previous epoch on home page
+- Show +ve / -ve change accompanied with Arrow (for colorblind users)
+- Show Identity breakdown in percentage on epoch page
+- Show real-time USD price (Refreshed every couple seconds) on the DNA icon
+- Show small price popup on DNA extension in all windows
 ```
 
 ### Who maintains Idena Plus Extension? 
