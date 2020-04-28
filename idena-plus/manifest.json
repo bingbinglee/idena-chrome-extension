@@ -2,8 +2,18 @@
   "manifest_version": 2,
 
   "name": "Idena plus",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Increase Idena explorer capability",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "Idena plus",  // optional; shown in tooltip
+    "default_popup": "popup.html"
+  },
+
+  "background": {
+  "scripts":["js/background.js"]
+  },
 
   "icons": { "16": "icon.png",
            "48": "icon.png",
@@ -11,11 +21,11 @@
 
   "web_accessible_resources": [
   "idena-logo-dark.svg","images/moon.svg","images/sun.svg","css/styles.css", "css/dark-mode.css"
-],
+  ],
 
   "permissions": [
       "activeTab"
-    ],
+  ],
 
   "content_scripts": [
   {
@@ -49,6 +59,6 @@
     "js": ["js/epoch-home.js"],
     "matches": ["https://scan.idena.io/tx*","https://scan.idena.io/epoch*","https://scan.idena.org/epoch*"]
   }
-]
+  ]
 
 }
