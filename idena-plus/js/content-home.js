@@ -58,25 +58,7 @@ function ajax_get(url, callback) {
 
 function pricemagic(){
 
-  /* var hotlinks = '<section class="section">'
-      +'<div class="button-group">'
-        +'<a type="button" class="btn btn-small btn-secondary" href="./circulation">'
-          +'<i class="icon icon--coins"></i>'
-          +'<span>Circulating supply</span>'
-        +'</a>'
-        +'<a class="btn btn-secondary btn-small" id="ValidationResult" href="./validation?epoch=42">'
-          +'<i class="icon icon--report"></i>'
-          +'<span>Validation results</span>'
-        +'</a>'
-        +'<a class="btn btn-secondary btn-small" href="https://idena.today">'
-          +'<i class="icon icon--timer"></i>'
-          +'<span>More stats</span>'
-        +'</a>'
-      +'</div>'
-      +'</section>'; */
-
-
-  var currentpricewidget = '<div class="col-3 col-sm-3">'
+  var currentpricewidget = '<div class="col-12 col-sm-3">'
             +'<h1>Current Price</h1>'
             +'<div class="card">'
             +'<div class="info_block">'
@@ -89,7 +71,7 @@ function pricemagic(){
               +'</div>'
               +'</div></div>';
 
-  var growthwidget = '<div class="col-3 col-sm-3">'
+  var growthwidget = '<div class="col-12 col-sm-3">'
             +'<h1>Network Growth</h1>'
             +'<div class="card">'
             +'<div class="info_block">'
@@ -105,7 +87,7 @@ function pricemagic(){
   var timewidget = '<section class="section section_info">' 
             +'<div class="row">'
             +currentpricewidget
-            +'<div class="col-9 col-sm-6">'
+            +'<div class="col-12 col-sm-6">'
             +'<h1>Next Validation In</h1>'
             +'<div class="card">'
             +'<div class="info_block">'
