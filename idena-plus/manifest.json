@@ -53,7 +53,8 @@
   },
   {
     "js": ["js/transact.js"],
-    "matches": ["https://scan.idena.io/tx*","https://scan.idena.io/block*","https://scan.idena.org/block*","https://scan.idena.org/tx*"]
+    "matches": ["https://scan.idena.io/tx*","https://scan.idena.org/tx*"],
+    "run_at": "document_end"
   },
   {
     "js": ["js/epoch-home.js"],
