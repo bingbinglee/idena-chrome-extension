@@ -164,9 +164,9 @@ parent3.innerHTML = '<section class="section section_info">'+coinchange.innerHTM
 
 function color(x) {
   if(x<0) {
-     return '<span class="red">'+x+'% &#x2193;</span>';
+     return '<span class="red">'+precise2(x)+'% &#x2193;</span>';
   } else {
-    return '<span class="green">+'+x+'% &#x2191;</span>';
+    return '<span class="green">+'+precise2(x)+'% &#x2191;</span>';
   }
 }
 
@@ -221,9 +221,9 @@ window.onload = (function(){
     curprice = precise3(data['market_data']['current_price']['usd']);
     totalvol = precise3(data['tickers'][0]['converted_volume']['usd']);
 
-    percentage = color(precise2(data['market_data']['price_change_percentage_24h']));
-    percentage7 = color(precise2(data['market_data']['price_change_percentage_7d']));
-    percentage30 = color(precise2(data['market_data']['price_change_percentage_30d']));
+    percentage = color(data['market_data']['price_change_percentage_24h']);
+    percentage7 = color(data['market_data']['price_change_percentage_7d']);
+    percentage30 = color(data['market_data']['price_change_percentage_30d']);
    
     pricemagic();
 
@@ -243,7 +243,7 @@ window.onload = (function(){
           ajax_get('https://api.idena.org/api/Epoch/'+epoch+'/Identities/Count?states[]=Newbie,Verified,Human', function(data) {  
 
             previous = data["result"];
-            growth_last = color(precise2((current-previous)/previous*100));
+            growth_last = color((current-previous)/previous*100);
 
             document.getElementById("NetworkGrowth").innerHTML = growth_last;
             document.getElementById("ValidationResult").href = "./validation?epoch="+epochlink;

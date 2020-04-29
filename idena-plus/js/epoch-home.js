@@ -53,9 +53,9 @@ function ajax_get(url, callback) {
 
 function color(x) {
   if(x<0) {
-     return '<span class="red" style="margin-left: 7px;">'+x+'% &#x2193;</span>';
+     return '<span class="red" style="margin-left: 7px;">'+precise2(x)+'% &#x2193;</span>';
   } else {
-    return '<span class="green" style="margin-left: 7px;">+'+x+'% &#x2191;</span>';
+    return '<span class="green" style="margin-left: 7px;">+'+precise2(x)+'% &#x2191;</span>';
   }
 }
 
@@ -71,8 +71,8 @@ window.onload = (function(){
     
     previous = data["result"];
 
-    growth_last = color(precise2((current-previous)/previous*100));
-    growth_first = color(precise2((current-genesis)/genesis*100));
+    growth_last = color((current-previous)/previous*100);
+    growth_first = color((current-genesis)/genesis*100);
     
     lastepoch.innerHTML += '<hr><div class="control-label">Growth since last epoch: </div><div class="text_block"> '+growth_last+'</div>';
     firstepoch.innerHTML += '<hr><div class="control-label">Growth since first epoch('+first+'): </div><div class="text_block"> '+growth_first+'</div>';

@@ -29,9 +29,9 @@ function ajax_get(url, callback) {
 
 function color(x) {
   if(x<0) {
-     return '<span class="red">'+x+'% &#x2193;</span>';
+     return '<span class="red">'+precise2(x)+'% &#x2193;</span>';
   } else {
-    return '<span class="green">+'+x+'% &#x2191;</span>';
+    return '<span class="green">+'+precise2(x)+'% &#x2191;</span>';
   }
 }
 
@@ -48,9 +48,9 @@ function fetch()
   document.getElementById("BTC").innerHTML = buybtc;
   document.getElementById("ETH").innerHTML = buyeth;
 
-  document.getElementById("h24").innerHTML = color(precise2(data['market_data']['price_change_percentage_24h']));
-  document.getElementById("d7").innerHTML = color(precise2(data['market_data']['price_change_percentage_7d']));
-  document.getElementById("d30").innerHTML = color(precise2(data['market_data']['price_change_percentage_30d']));
+  document.getElementById("h24").innerHTML = color(data['market_data']['price_change_percentage_24h']);
+  document.getElementById("d7").innerHTML = color(data['market_data']['price_change_percentage_7d']);
+  document.getElementById("d30").innerHTML = color(data['market_data']['price_change_percentage_30d']);
 
   }); 
 }
