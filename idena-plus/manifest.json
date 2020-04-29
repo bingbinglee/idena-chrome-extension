@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "Idena plus",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Increase Idena explorer capability",
 
   "browser_action": {
