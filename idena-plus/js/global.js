@@ -38,7 +38,7 @@ var htmcontent = '<button type="button" id="moon" class="rem btn btn-icon"'
 						+'<img src="'+chrome.extension.getURL("images/sun.svg")+'" width="18px" height="18px"' 
 						+'style="opacity: 0.8;"/></button>'; 
 
-modechange.innerHTML = htmcontent;
+modechange.innerHTML += htmcontent;
 
 
 if (mode =='dark') {
