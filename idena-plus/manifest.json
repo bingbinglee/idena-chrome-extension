@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "Idena plus",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Increase Idena explorer capability",
 
   "browser_action": {
@@ -12,7 +12,7 @@
   },
 
   "background": {
-  "scripts":["js/background.js"]
+  "scripts":["js/ticker.js"]
   },
 
   "icons": { "16": "icon.png",
