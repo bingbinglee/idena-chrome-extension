@@ -57,7 +57,7 @@
   },
   {
     "js": ["js/epoch-home.js"],
-    "matches": ["https://scan.idena.io/tx*","https://scan.idena.io/epoch*","https://scan.idena.org/epoch*"]
+    "matches": ["https://scan.idena.io/epoch*","https://scan.idena.org/epoch*"]
   }
   ]
 
