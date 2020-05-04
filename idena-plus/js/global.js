@@ -8,7 +8,7 @@ var mode = localStorage.getItem('mode') || '';
 
 
 var parent2 = document.querySelector(".justify-content-between");
-var modechange = parent2.querySelector(".col-auto:last-child");
+var modechange = parent2.querySelector(".col");
 
 
 
