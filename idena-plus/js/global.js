@@ -17,7 +17,10 @@ document.getElementsByClassName('main')[0].classList.add('extra-main-padding');
 
 var scrolltop = '<button type="button" class="btn btn-icon hide" id="scrollTop" onclick="window.scrollTo({ top: 0, behavior: \'smooth\' });">'
 				+'<i class="icon icon--thin_arrow_up"></i></button>';
+
+if(document.querySelector(".section:last-child")){
 document.querySelector(".section:last-child").innerHTML = document.querySelector(".section:last-child").innerHTML + scrolltop;
+}
 
 
 var htmcontent = '<button type="button" id="moon" class="rem btn btn-icon"'
