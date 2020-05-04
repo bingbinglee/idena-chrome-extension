@@ -59,6 +59,11 @@
   {
     "js": ["js/epoch-home.js"],
     "matches": ["https://scan.idena.io/epoch*","https://scan.idena.org/epoch*"]
+  },
+  {
+    "js": ["js/datefix.js"],
+    "matches": ["https://idena.io/","https://idena.org/","https://idena.io/#","https://idena.org/#"],
+    "run_at": "document_end"
   }
   ]
 
