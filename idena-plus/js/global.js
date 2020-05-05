@@ -18,12 +18,8 @@ document.getElementsByClassName('main')[0].classList.add('extra-main-padding');
 var scrolltop = '<button type="button" class="btn btn-icon hide" id="scrollTop" onclick="window.scrollTo({ top: 0, behavior: \'smooth\' });">'
 				+'<i class="icon icon--thin_arrow_up"></i></button>';
 
-if(document.querySelector(".section:last-child")){
-document.querySelector(".section:last-child").innerHTML = document.querySelector(".section:last-child").innerHTML + scrolltop;
-}
-
-
-var htmcontent = '<button type="button" id="moon" class="rem btn btn-icon"'
+var themeTop = '<span id="themeTop" class="hide">'
+			+'<button type="button" id="moon" class="rem btn btn-icon theme"'
 						+' onclick="localStorage.setItem(\'mode\', \'dark\');'
             +'document.querySelector(\'.header_logo a img\').setAttribute(\'src\',\''+imgURL+'\');'
             +'document.getElementsByTagName(\'html\')[0].classList.add(\'darkmode\');'
@@ -32,16 +28,22 @@ var htmcontent = '<button type="button" id="moon" class="rem btn btn-icon"'
 						+'" id="moon">'
 						+'<img src="'+chrome.extension.getURL("images/moon.svg")+'" width="18px" height="18px"' 
 						+'style="opacity: 0.8;"/></button>'
-            +'<button type="button" id="sun" class="rem btn btn-icon"'
+            +'<button type="button" id="sun" class="rem btn btn-icon theme"'
 						+' onclick="localStorage.setItem(\'mode\', \'light\'); document.getElementsByTagName(\'html\')[0].classList.remove(\'darkmode\');'
             +'document.querySelector(\'.header_logo a img\').setAttribute(\'src\',\'https://scan.idena.io/images/idena-logo.svg\');'
             +'document.getElementById(\'moon\').classList.remove(\'rem\');'
             +'document.getElementById(\'sun\').classList.add(\'rem\');'
 						+'" id="sun">'
 						+'<img src="'+chrome.extension.getURL("images/sun.svg")+'" width="18px" height="18px"' 
-						+'style="opacity: 0.8;"/></button>'; 
+						+'style="opacity: 0.8;"/></button>'
+						+'</span>'; 
 
-modechange.innerHTML += htmcontent;
+
+if(document.querySelector(".section:last-child")){
+document.querySelector(".section:last-child").innerHTML = document.querySelector(".section:last-child").innerHTML + scrolltop + themeTop;
+}
+
+/* modechange.innerHTML += htmcontent; */
 
 
 if (mode =='dark') {
@@ -62,8 +64,12 @@ function shadowFunction() {
   if (window.pageYOffset > sticky) {
     document.getElementsByClassName('header')[0].classList.add('header-shadow');
     document.getElementById('scrollTop').classList.remove('hide');
+    document.getElementById('themeTop').classList.remove('hide');
+
   } else {
     document.getElementsByClassName('header')[0].classList.remove('header-shadow');
     document.getElementById('scrollTop').classList.add('hide');
+    document.getElementById('themeTop').classList.add('hide');
+
   }
 }

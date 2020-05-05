@@ -75,7 +75,7 @@
     color: #50b6ff !important;
 }
 
-.darkmode #scrollTop {
+.darkmode #scrollTop, .darkmode .theme {
     background-color: rgb(41, 44, 46) !important;
 }
 
