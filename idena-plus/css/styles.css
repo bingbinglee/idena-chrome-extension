@@ -91,8 +91,7 @@ body {
 .header .form_search {
     font-size: 0;
     margin-left: 10% !important;
-    margin-right: 10% !important;
-    max-width: 600px;
+    margin-right: 20% !important;
     width: 70%;
     display: inline-block;
 }
