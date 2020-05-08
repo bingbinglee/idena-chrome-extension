@@ -27,8 +27,8 @@ function ajax_get(url, callback) {
 
 function fetch()
 {
-	ajax_get('https://api.coingecko.com/api/v3/simple/price?ids=idena&vs_currencies=usd,btc,eth', function(data) {
-	curprice = data['idena']['usd'];
+	ajax_get('https://api.coinpaprika.com/v1/tickers/dna-idena?quotes=USD', function(data) {
+	curprice = data['quotes']['USD']['price'];
 	buy = precise3(curprice);
 	chrome.browserAction.setBadgeText({text: buy});
   	}); 

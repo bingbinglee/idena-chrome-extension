@@ -38,19 +38,19 @@ function color(x) {
 
 function fetch()
 {
-	ajax_get('https://api.coingecko.com/api/v3/coins/idena?localization=true&tickers=true&market_data=true&community_data=false&developer_data=false', function(data) {
+	ajax_get('https://api.coinpaprika.com/v1/tickers/dna-idena?quotes=USD,ETH,BTC', function(data) {
 	
-	buyusd = data['market_data']['current_price']['usd'];
-  buybtc = data['market_data']['current_price']['btc'];
-  buyeth = data['market_data']['current_price']['eth'];
+	buyusd = data['quotes']['USD']['price'];
+  buybtc = data['quotes']['BTC']['price'];
+  buyeth = data['quotes']['ETH']['price'];
 
 	document.getElementById("USD").innerHTML = buyusd;
   document.getElementById("BTC").innerHTML = buybtc;
   document.getElementById("ETH").innerHTML = buyeth;
 
-  document.getElementById("h24").innerHTML = color(data['market_data']['price_change_percentage_24h']);
-  document.getElementById("d7").innerHTML = color(data['market_data']['price_change_percentage_7d']);
-  document.getElementById("d30").innerHTML = color(data['market_data']['price_change_percentage_30d']);
+  document.getElementById("h24").innerHTML = color(data['quotes']['USD']['percent_change_24h']);
+  document.getElementById("d7").innerHTML = color(data['quotes']['USD']['percent_change_7d']);
+  document.getElementById("d30").innerHTML = color(data['quotes']['USD']['percent_change_30d']);
 
   }); 
 }

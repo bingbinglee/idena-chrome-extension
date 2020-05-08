@@ -183,10 +183,10 @@ window.onload = (function(){
     stake = precise3(data['result']['stake']);
     txCount = precise2(data['result']['txCount']);
 
-    ajax_get('https://api.coingecko.com/api/v3/coins/idena?localization=true&tickers=true&market_data=true&community_data=false&developer_data=false', function(data2) {
+    ajax_get('https://api.coinpaprika.com/v1/tickers/dna-idena?quotes=USD', function(data2) {
     
 
-    curprice = rounder(data2['market_data']['current_price']['usd']);
+    curprice = rounder(data2['quotes']['USD']['price']);
     //console.log(curprice+balance+stake);
     
     total = precise2(curprice*(rounder(balance)+rounder(stake)));

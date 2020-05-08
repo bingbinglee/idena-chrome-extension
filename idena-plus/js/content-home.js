@@ -216,14 +216,14 @@ function timemagic(){
 
 window.onload = (function(){
 
-  ajax_get('https://api.coingecko.com/api/v3/coins/idena?localization=true&tickers=true&market_data=true&community_data=false&developer_data=false', function(data) {
+  ajax_get('https://api.coinpaprika.com/v1/tickers/dna-idena?quotes=USD,ETH,BTC', function(data) {
     //console.log(data);
-    curprice = precise3(data['market_data']['current_price']['usd']);
-    totalvol = precise3(data['tickers'][0]['converted_volume']['usd']);
+    curprice = precise3(data['quotes']['USD']['price']);
+    totalvol = precise3(data['quotes']['USD']['volume_24h']);
 
-    percentage = color(data['market_data']['price_change_percentage_24h']);
-    percentage7 = color(data['market_data']['price_change_percentage_7d']);
-    percentage30 = color(data['market_data']['price_change_percentage_30d']);
+    percentage = color(data['quotes']['USD']['percent_change_24h']);
+    percentage7 = color(data['quotes']['USD']['percent_change_7d']);
+    percentage30 = color(data['quotes']['USD']['percent_change_30d']);
    
     pricemagic();
 
