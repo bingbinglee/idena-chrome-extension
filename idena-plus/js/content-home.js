@@ -149,7 +149,7 @@ function pricemagic(){
                     +'<div class="control-label" data-toggle="tooltip" title="24 hour volume in USD" data-original-title="24 hour volume in USD">24 hr volume (USD)</div>'
                   +'</div>'                  
                 +'</div>'
-                +'<div class="row" style="height: 30px;"><a href="https://www.coingecko.com/en/coins/idena" target="_blank" style="display: inline-block; position: absolute; left:43.5%" class="btn btn-secondary btn-small"><span>More price data</span></a></div>'
+                +'<div class="row" style="height: 30px;"><a href="https://nomics.com/assets/dna2-idena" target="_blank" style="display: inline-block; position: absolute; left:43.5%" class="btn btn-secondary btn-small"><span>More price data</span></a></div>'
               +'</div>'
             +'</div>'
           +'</div>'
