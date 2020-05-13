@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "Idena plus",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "Increase Idena explorer capability",
 
   "browser_action": {
@@ -21,10 +21,6 @@
 
   "web_accessible_resources": [
   "idena-logo-dark.svg","images/moon.svg","images/sun.svg","css/styles.css", "css/dark-mode.css"
-  ],
-
-  "permissions": [
-      "activeTab"
   ],
 
   "content_scripts": [
