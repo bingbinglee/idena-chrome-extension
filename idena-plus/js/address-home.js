@@ -150,7 +150,7 @@ address.innerHTML = address_str[0]+'<span class="badge badge-secondary">2021-202
 }
 var topheader = parent2.querySelector(".section:first-child");
 topheader.innerHTML += '<div class="button-group">'
-        +'<a href="#" onclick="var range \= document.createRange();'
+        +'<a href="javascript:void(0);" onclick="var range \= document.createRange();'
                     +'range.selectNode(document.getElementById(\'Address\'));'
                     +'window.getSelection().removeAllRanges();' // clear current selection
                     +'window.getSelection().addRange(range);' // to select text
