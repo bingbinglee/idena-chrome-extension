@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "Idena plus",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "Increase Idena explorer capability",
 
   "browser_action": {
@@ -37,15 +37,18 @@
   },
   {
     "js": ["js/content-home.js"],
-    "matches": ["https://scan.idena.io/","https://scan.idena.org/"]
+    "matches": ["https://scan.idena.io/","https://scan.idena.org/"],
+    "run_at": "document_end"
   },
   {
     "js": ["js/identity-home.js"],
-    "matches": ["https://scan.idena.io/identity*","https://scan.idena.org/identity*"]
+    "matches": ["https://scan.idena.io/identity*","https://scan.idena.org/identity*"],
+    "run_at": "document_end"
   },
   {
     "js": ["js/address-home.js"],
-    "matches": ["https://scan.idena.io/address*","https://scan.idena.org/address*"]
+    "matches": ["https://scan.idena.io/address*","https://scan.idena.org/address*"],
+    "run_at": "document_end"
   },
   {
     "js": ["js/transact.js"],
@@ -54,7 +57,8 @@
   },
   {
     "js": ["js/epoch-home.js"],
-    "matches": ["https://scan.idena.io/epoch*","https://scan.idena.org/epoch*"]
+    "matches": ["https://scan.idena.io/epoch*","https://scan.idena.org/epoch*"],
+    "run_at": "document_end"
   },
   {
     "js": ["js/datefix.js"],
