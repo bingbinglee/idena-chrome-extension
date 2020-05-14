@@ -1,6 +1,9 @@
 var parent2 = document.querySelector(".main .container:last-child");
 var topheader = parent2.querySelector(".section:first-child");
 
+var str = window.location.href.split( "/transaction/" );
+var tx_str = str[1].split("#");
+
 var trgt = '';
 
 function ajax_get(url, callback) {
@@ -23,20 +26,13 @@ function ajax_get(url, callback) {
 }
 
 
-function getUrlVars() {
-    var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-        vars[key] = value;
-    });
-    return vars;
-}
-
 
 window.onload = (function(){
 
-	ajax_get('https://api.idena.org/api/Transaction/'+getUrlVars()["tx"], function(data) {
+	ajax_get('https://api.idena.org/api/Transaction/'+tx_str[0], function(data) {
 
 	trgt = data["result"]["from"];
+
 
 	topheader.innerHTML += '<div class="button-group">'
         +'<a href="https://scan.idena.io/address?address='+trgt+'" class="btn btn-secondary btn-small" id="AddressPageLink">'

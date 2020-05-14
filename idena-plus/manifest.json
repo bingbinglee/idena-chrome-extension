@@ -52,7 +52,7 @@
   },
   {
     "js": ["js/transact.js"],
-    "matches": ["https://scan.idena.io/tx*","https://scan.idena.org/tx*"],
+    "matches": ["https://scan.idena.io/transaction*","https://scan.idena.org/transaction*"],
     "run_at": "document_end"
   },
   {
