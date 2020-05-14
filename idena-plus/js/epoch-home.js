@@ -12,7 +12,11 @@ var previous = '';
 var growth_last = '';
 var growth_first = '';
 var first = 8;
-var epoch = getUrlVars()["epoch"];
+
+var str = window.location.href.split( "/epoch/" );
+var epoch_str = str[1].split("#");
+
+var epoch = epoch_str[0];
 var prevEpoch = epoch - 1;
 var prevEpoch1 = epoch - 2;
 
@@ -79,8 +83,7 @@ window.onload = (function(){
 
     details = document.querySelector(".section_details");
 
-    	ajax_get('https://api.idena.org/api/Epoch/'+(getUrlVars()["epoch"]-1)+'/IdentityStatesSummary', function(data2) {  
-    		console.log(data2);
+    	ajax_get('https://api.idena.org/api/Epoch/'+(epoch-1)+'/IdentityStatesSummary', function(data2) {  
 
     		details.innerHTML = '<section class="section section_details">'+details.innerHTML
     		+'</section>'
