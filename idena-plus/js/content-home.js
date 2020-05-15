@@ -16,11 +16,10 @@ var countDownDate = new Date("").getTime();
 var validTime = '--';
 
 
-var parent3 = document.querySelector(".main .container:last-child");
-var hotlinks = document.getElementsByTagName("section")[1].innerHTML;
+var parent3 = '';
 
-var coinchange = parent3.querySelector(".section:first-child");
-var minechange = parent3.querySelector(".section:last-child");
+var coinchange = '';
+var minechange = '';
 
 function precise2(x) {
   return x.toLocaleString(undefined, {maximumFractionDigits:2});
@@ -58,6 +57,7 @@ function ajax_get(url, callback) {
 
 function pricemagic(){
 
+
   var currentpricewidget = '<div class="col-12 col-sm-3">'
             +'<h1>Current Price</h1>'
             +'<div class="card">'
@@ -84,8 +84,12 @@ function pricemagic(){
               +'</div>'
               +'</div></div>';
 
-  var timewidget = '<section class="section section_info">' 
-            +'<div class="row">'
+
+  var hotcontainer = document.createElement("section");
+  hotcontainer.classList.add("section");
+  hotcontainer.classList.add("section_info");
+
+  hotcontainer.innerHTML = '<div class="row">'
             +currentpricewidget
             +'<div class="col-12 col-sm-6">'
             +'<h1>Next Validation In</h1>'
@@ -122,11 +126,14 @@ function pricemagic(){
 
               +growthwidget
               
-            +'</div>'
-          +'</section>';
+            +'</div>';
 
-  var pricewidget = '<section class="section section_info">'
-        +'<div class="row">'
+
+   var hotcontainer1 = document.createElement("section");
+  hotcontainer1.classList.add("section");
+  hotcontainer1.classList.add("section_info");
+
+  hotcontainer1.innerHTML = '<div class="row">'
          +'<div class="col-12 col-sm-12">'
             +'<h1>Price Change</h1>'
             +'<div class="card">'
@@ -153,11 +160,10 @@ function pricemagic(){
               +'</div>'
             +'</div>'
           +'</div>'
-        +'</div>'
-     +'</section>';
+        +'</div>';
 
-
-parent3.innerHTML = '<section class="section section_info">'+coinchange.innerHTML+'</section>' + '<section class="section ">'+ hotlinks +'</section>'+ timewidget + pricewidget + '<section class="section section_info">'+minechange.innerHTML +'</section>';
+parent3.insertBefore(hotcontainer, minechange);
+parent3.insertBefore(hotcontainer1, minechange);
 
 }
 
@@ -216,7 +222,7 @@ function timemagic(){
 
 window.onload = (function(){
 
-  ajax_get('https://api.coinpaprika.com/v1/tickers/dna-idena?quotes=USD,ETH,BTC', function(data) {
+  ajax_get('https://api.coinpaprika.com/v1/tickers/dna-idena?quotes=USD', function(data) {
     //console.log(data);
     curprice = precise3(data['quotes']['USD']['price']);
     totalvol = precise3(data['quotes']['USD']['volume_24h']);
@@ -225,6 +231,12 @@ window.onload = (function(){
     percentage7 = color(data['quotes']['USD']['percent_change_7d']);
     percentage30 = color(data['quotes']['USD']['percent_change_30d']);
    
+
+    parent3 = document.querySelector(".main .container:last-child");
+
+    coinchange = parent3.querySelectorAll(".section")[0];
+    minechange = parent3.querySelectorAll(".section")[2];
+
     pricemagic();
 
       ajax_get('https://api.idena.io/api/epoch/last', function(data) {
@@ -246,7 +258,6 @@ window.onload = (function(){
             growth_last = color((current-previous)/previous*100);
 
             document.getElementById("NetworkGrowth").innerHTML = growth_last;
-            document.getElementById("ValidationResult").href = "./validation?epoch="+epochlink;
 
           });
 
