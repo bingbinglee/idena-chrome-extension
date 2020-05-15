@@ -38,7 +38,7 @@
   {
     "js": ["js/content-home.js"],
     "matches": ["https://scan.idena.io/","https://scan.idena.org/"],
-    "run_at": "document_idle"
+    "run_at": "document_end"
   },
   {
     "js": ["js/identity-home.js"],

@@ -129,7 +129,7 @@ function pricemagic(){
             +'</div>';
 
 
-   var hotcontainer1 = document.createElement("section");
+  var hotcontainer1 = document.createElement("section");
   hotcontainer1.classList.add("section");
   hotcontainer1.classList.add("section_info");
 
