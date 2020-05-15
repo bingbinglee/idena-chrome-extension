@@ -116,8 +116,8 @@ body {
     font-weight: 500 !important;
     font-size: 1.65rem !important;
     border-radius: 100rem !important;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 15px !important;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 15px !important;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px !important;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px !important;
 }
 
 .theme {
@@ -125,8 +125,8 @@ body {
 }
 
 #sun, #moon {
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 15px !important;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 15px !important;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px !important;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px !important;
 }
 
 .header .container{
