@@ -193,6 +193,7 @@ function timemagic(){
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
   // Output the result in an element with id="demo"
+  if(document.getElementById("counter")) {
   document.getElementById("counter").innerHTML = '<div class="col-auto">'
                     +'<span class="days">'+days+'</span>'
                     +'<span class="_smalltext"> days</span>'
@@ -210,6 +211,7 @@ function timemagic(){
                     +'<span class="_smalltext"> seconds</span>'
                   +'</div>';
   document.getElementById("NextValidationDateTime").innerHTML = validTime;
+  }
     
   // If the count down is over, write some text 
   if (distance < 0) {
