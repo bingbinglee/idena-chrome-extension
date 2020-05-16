@@ -1,4 +1,21 @@
 
+/** polling function and execute content scripts **/
+
+var listenURL = document.location.href;
+var scrip = '';
+var y = setInterval(function() {
+if(listenURL != document.location.href) {
+	listenURL = document.location.href;
+	/* if(listenURL.search("//scan.idena.io/address/")>-1 || listenURL.search("//scan.idena.io/transaction/")>-1 || listenURL.search("//scan.idena.io/epoch/")>-1 || listenURL.search("//scan.idena.io/identity/")>-1){
+		window.location = document.location.href;
+	}*/
+	window.location = document.location.href;
+}
+}, 100);
+
+/** polling ends **/
+
+
 var imgURL = chrome.extension.getURL("idena-logo-dark.svg");
 var parent = document.querySelector(".header_logo");
 

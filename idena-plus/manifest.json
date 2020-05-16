@@ -12,15 +12,19 @@
   },
 
   "background": {
-  "scripts":["js/ticker.js"]
+  "scripts":["js/ticker.js", "js/bgrefresh.js"]
   },
+
+  "permissions": [
+     "*://scan.idena.io/*", "*://scan.idena.org/*"
+  ],
 
   "icons": { "16": "icon.png",
            "48": "icon.png",
           "128": "icon.png" },
 
   "web_accessible_resources": [
-  "idena-logo-dark.svg","images/moon.svg","images/sun.svg","css/styles.css", "css/dark-mode.css"
+  "idena-logo-dark.svg","images/moon.svg","images/sun.svg","css/styles.css", "css/dark-mode.css","js/address-home.js"
   ],
 
   "content_scripts": [
