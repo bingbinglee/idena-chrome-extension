@@ -6,8 +6,8 @@ v0.1.7
 ```
 - Show +ve / -ve change accompanied with Arrow (for colorblind users)
 - Show Identity breakdown in percentage on epoch page
-- Show real-time USD price (Refreshed every couple seconds) on the DNA icon
-- Show small price popup on DNA extension in all windows
+- Show real-time USD price (Refreshed every couple seconds) on the IDNA icon
+- Show small price popup on IDNA extension in all windows
 ```
 
 ### Who maintains Idena Plus Extension? 
