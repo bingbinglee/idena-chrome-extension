@@ -120,6 +120,9 @@ if(address_str[0]=='0x83B8A2F9Bd1bE7f1fB496ec91eB0C6983cD38725'){
 } else if(address_str[0]=='0x1f96445BE4D941934277CCe0C02D9EA8c9cc02f5'){
 address.innerHTML = address_str[0]+'<span class="badge badge-secondary">Qbtc exchange</span>';
 
+} else if(address_str[0]=='0x4E55380bD90b754615A779FC3C4cf949481875CB'){
+address.innerHTML = address_str[0]+'<span class="badge badge-secondary">Hotbit exchange</span>';
+
 } else if(address_str[0]=='0xcbb98843270812eeCE07BFb82d26b4881a33aA91'){
 address.innerHTML = address_str[0]+'<span class="badge badge-secondary">Foundation wallet</span>';
 
